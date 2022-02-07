@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Employee>
+
+<h1> @ViewBag.Title </h1>
+
+<div class="employee_wrap">
+    <div class="all">
+        @foreach (var employee in Model)
+        {
+
+        <div class="employee_container">
+            <h3 class="employee_name"> @employee.Name</h3>
+
+            <img class="employee_picture" src="@Url.Content(employee.Picture)" />
+            <div class="buttons">
+                <a href="/Employees/Details/@employee.Id" class="detail_btn"><btn class="details_btn">Detalji</btn></a>
+                <a href="/Employees/Update/@employee.Id" class="detail_btn"><btn class="details_btn">Izmeni</btn></a>
+            </div>
+        </div>
+
+        }
+    </div>
+
+    <div class="add_btn">
+        <a asp-controller="employee" asp-action="create"><btn class="add">Dodati</btn></a>
+    </div>
+</div>

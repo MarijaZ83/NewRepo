@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Product>
+
+<h1 class="title">@ViewBag.Title</h1>
+<div class="main_container_2">
+
+    <div class="pizza_wrap">
+        @foreach (var product in Model)
+        {
+        <div class="pizza_card">
+            <h3 class="pizza_name"> @product.ProductName  </h3>
+            <div class="slika_akcija">
+                <img class="pizza_img" src="@Url.Content(product.Picture)" />
+                @if (product.IsDiscounted)
+                {<p class="akcija"><b>Akcija!!!</b></p>}
+                else
+                { <p class="empty"></p>}
+                @if (product.IsDiscounted)
+                {<div class="new_price_container"><b>Cena:</b><p class="old_pizza_price">@product.UnitPrice din.</p><p>@product.DiscountedPrice din.</p></div>}
+            else
+            {<div><p class="pizza_price"> <b>Cena:</b> @product.UnitPrice din.</p></div>}
+            </div>
+            <p class="pizza_description"> <b>Sastojci:</b> @product.Description </p>
+            <div class="btns">
+                <a href="/Products/Details/@product.Id" class="details_link"><btn class="pizza_details">Detalji</btn></a>
+                <a href="/Products/Update/@product.Id" class="details_link"><btn class="pizza_details">Izmeniti</btn></a>
+            </div>
+        </div>
+         }
+    </div>
+    <div class="add_btn">
+        <a asp-controller="product" asp-action="create"><btn class="add">Dodati</btn></a>    
+    </div>
+</div>

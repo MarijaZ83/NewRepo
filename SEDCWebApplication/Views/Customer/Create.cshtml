@@ -1,0 +1,46 @@
+﻿@*@model SEDCWebApplication.ViewModels.CustomerDetailsViewModel*@
+@model SEDCWebApplication.ViewModels.CustomerCreateViewModel
+
+<form enctype="multipart/form-data" asp-controller="customer" asp-action="create" method="post">
+    <div class="form_div">
+
+        <div class="md-form mb-5">
+            <label asp-for="Name"> Ime </label>
+            <input asp-for="Name" type="text" class="form-control validate" placeholder="Unesite ime" />
+            <span asp-validation-for="Name"></span>
+        </div>
+
+        <div class="md-form mb-5">
+            <label asp-for="Email"> Email</label>
+            <input asp-for="Email" type="text" class="form-control validate" placeholder="Unesite Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+
+        @*Upload*@
+        <div class="md-form mb-5">
+            <label asp-for="Picture" class="col-sm-2 col-form-label"></label>
+            <div class="custom-file">
+                <label class="custom-file-label"> Chosee file...</label>
+                <input asp-for="Picture" placeholder="Slika" class="form-control custom-file-input" />
+            </div>
+            <span asp-validation-for="Picture"></span>
+        </div>
+    </div>
+
+    <div class="form_btn">
+        <button type="submit" class="submit_btn"> Potvrdi </button>
+    </div>
+
+    @section Scripts{
+        <script>
+            $(document).ready(function () {
+                $('.custom-file-input').on("change", function () {
+                    var fileName = $(this).val().split("\\").pop();
+                    $(this).next('.custom-file-label').html(fileName);
+                });
+            });
+        </script>
+    }
+
+</form>
+

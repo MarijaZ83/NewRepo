@@ -1,0 +1,27 @@
+﻿
+@model IEnumerable<Customer>
+
+<h1> @ViewBag.Title </h1>
+
+<div class="customer_wrap">
+    <div class="all">
+        @foreach (var customer in Model)
+        {
+
+        <div class="customer_container">
+            <h3 class="customer_name"> @customer.Name</h3>
+            <img class="customer_picture" src="@Url.Content(customer.Picture)" />
+            <p class="customer_email">@customer.Email</p>
+            <div class="btns">
+                <a href="/Customer/Details/@customer.Id" class="detail_btn"><btn class="details_btn">Detalji</btn> </a>
+                <a href="/Customer/Update/@customer.Id" class="detail_btn"><btn class="details_btn">Izmeni</btn> </a>
+            </div>
+        </div>
+
+        }
+    </div>
+
+        <div class="add_btn">
+            <a asp-controller="customer" asp-action="create"><btn class="add">Dodati</btn></a>
+        </div>
+    </div>

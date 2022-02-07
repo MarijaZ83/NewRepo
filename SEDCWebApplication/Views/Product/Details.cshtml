@@ -1,0 +1,17 @@
+﻿@model SEDCWebApplication.ViewModels.ProductDetailsViewModel
+
+<div class="main_container">
+    <div class="picture">
+        <img class="img" src="@Url.Content(Model.Picture)"/>
+    </div>
+    <div class="information">
+        <h3 class="pizza_name"> @Model.Name </h3>
+
+        @if (Model.IsDiscounted)
+            {<div class="new_price_container"><b>Cena:</b><p class="old_pizza_price">@Model.UnitPrice din.</p><p>@Model.DiscountedPrice din.</p></div>}
+                else
+            {<div><p class="pizza_price"> <b>Cena:</b> @Model.UnitPrice din.</p></div>}
+        
+        <p class="pizza_description"> <b>Sastojci:</b> @Model.Description </p>
+    </div>
+</div>

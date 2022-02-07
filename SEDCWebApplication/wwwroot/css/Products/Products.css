@@ -1,0 +1,124 @@
+﻿*{
+    box-sizing: border-box;
+}
+.title{
+    text-align: center;
+}
+.main_container_2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pizza_wrap {
+    width: 300px;
+}
+.pizza_card{
+    padding-bottom: 10px;
+}
+.pizza_name{
+    text-align: center;
+}
+.pizza_img {
+    height: 300px;
+    width: 300px;
+    border: solid 2px black;
+}
+.akcija{
+    width:60px;
+    height:20px;
+    background-color:red;
+    color:white;
+    text-align:center;
+    border-radius: 3px;
+    position:relative;
+    bottom:22px;
+    left: 235px;
+}
+.empty{
+    width:20px;
+}
+.pizza_details {
+    padding: 5px 10px;
+    background-color: darkgrey;
+    color: white;
+    border: solid 1px black;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    transition-property: padding, color;
+    transition-duration: 1s;
+}
+.pizza_details:hover{
+    padding: 4px 8px;
+    color: black;
+}
+.new_price_container {
+    display: flex;
+    justify-content: space-around;
+}
+.old_pizza_price {
+    text-decoration: line-through;
+}
+.add_btn{
+    width: 100px;
+    height: 50px;
+    border: solid 1px black;
+    border-radius: 5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color: darkcyan;
+}
+.update_btn {
+    width: 100px;
+    height: 50px;
+    border: solid 1px black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkcyan;
+}
+.add {
+    color: white;
+}
+.btns{
+    display:flex;
+    justify-content:space-around;
+}
+
+@media screen and (min-width: 800px) {
+    .pizza_wrap {
+        width: 700px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .pizza_card{
+        flex-wrap: wrap;
+        width: 45%;
+        padding-bottom: 20px;
+    }   
+    .akcija{
+        width:70px;
+        height:25px;
+        bottom: 27px;
+        left: 226px;
+    }
+    .empty{
+        height:25px;
+    }
+}
+
+@media screen and (min-width: 1100px){
+    .pizza_wrap {
+        width: 1000px;
+    }
+    .pizza_card{
+        width: 30%;
+        padding-bottom: 30px;
+    }
+    .akcija{
+        left: 225px;
+    }
+}

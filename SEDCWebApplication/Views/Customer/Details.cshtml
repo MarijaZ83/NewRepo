@@ -1,0 +1,13 @@
+﻿
+@model SEDCWebApplication.ViewModels.CustomerDetailsViewModel
+
+<div class="main_container">
+    <div class="picture">
+        <img class="img" src="@Url.Content(Model.Picture)" />
+    </div>
+    <div class="information">
+        <h3> @Model.Name</h3>
+
+        <p> <b>E-mail:</b> @Model.Email </p>
+    </div>
+</div>

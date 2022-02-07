@@ -1,0 +1,71 @@
+﻿*{
+    box-sizing: border-box;
+}
+h1{
+    text-align: center;
+}
+.all{
+    display: flex;
+    flex-direction: column;
+    align-items:center; 
+}
+.customer_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.customer_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+}
+.customer_picture{
+    height:300px;
+    width:200px;
+}
+.detail_btn {
+    padding: 5px 10px;
+    background-color: darkgrey;
+    color: white;
+    border: solid 1px black;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    transition-property: padding, color;
+    transition-duration: 1s;
+}
+.detail_btn:hover {
+    padding: 4px 8px;
+    color: black;
+}
+.btns {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (min-width: 800px) {
+    .all {
+        width: 700px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .customer_container {
+        flex-wrap: wrap;
+        width: 45%;
+        padding-bottom: 20px;
+        }
+    }
+    
+
+@media screen and (min-width: 1100px) {
+    .all {
+        width: 1000px;
+    }
+
+    .customer_container {
+        width: 30%;
+        padding-bottom: 30px;
+    }
+}
